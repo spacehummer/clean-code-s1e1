@@ -43,22 +43,22 @@
   display: flex;
 }
 
-ul {
+.task-list-base {
   margin: 0;
   padding: 0px;
 }
 
-li,
-h3 {
+.task-list-base__item,
+.main-controls__heading {
   list-style: none;
 }
 
-input,
-button{
+.input-base,
+.button-base {
   outline: none;
 }
 
-button {
+.button-base {
   background: none;
   border: 0px;
   color: #888;
@@ -68,13 +68,13 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button-base:hover {
   color: #3a3a3a;
 }
 
 /* Heading */
-h3,
-label[for="new-task"] {
+.main-controls__heading,
+.label-base[for="new-task"] {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -84,7 +84,7 @@ label[for="new-task"] {
   text-transform: uppercase;
 }
 
-input[type="text"] {
+.input-base[type="text"] {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -97,22 +97,22 @@ input[type="text"] {
   color: #888;
 }
 
-input[type="text"]:focus {
+.input-base[type="text"]:focus {
   color: #333;
 }
 
 /* New Task */
-label[for="new-task"] {
+.label-base[for="new-task"] {
   display: block;
   margin: 0 0 20px;
 }
 
-input#new-task {
+.input-base#new-task {
   width: 318px;
 }
 
 /* Task list */
-li {
+.task-list-base__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -122,51 +122,51 @@ li {
   align-items: center;
 }
 
-li > * {
+.task-list-base__item > * {
   vertical-align: middle;
 }
 
-li > input[type="checkbox"] {
+.task-list-base__item > .input-base[type="checkbox"] {
   margin: 0 10px;
 }
 
-li > label {
+.task-list-base__item > .label-base {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-li > input[type="text"] {
+.task-list-base__item > .input-base[type="text"] {
   width: 226px;
 }
 
-button.delete img {
+.button-base.delete .delete__icon {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-button.delete img:hover {
+.button-base.delete .delete__icon:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-ul.main-controls__completed-tasks label {
+.task-list-base.main-controls__completed-tasks .label-base {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-ul li input[type=text] {
+.task-list-base .task-list-base__item .input-base[type=text] {
   display: none;
 }
 
-ul li.item-editable input[type=text] {
+.task-list-base .task-list-base__item.item-editable .input-base[type=text] {
   display: inline-block;
   width: 224px;
 }
 
-ul li.item-editable label {
+.task-list-base .task-list-base__item.item-editable .label-base {
   display: none;
 }

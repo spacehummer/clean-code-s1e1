@@ -20,6 +20,7 @@ var completedTasksHolder=document.querySelector(".main-controls__completed-tasks
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
+    listItem.classList.add("task-list-base__item");
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
@@ -29,23 +30,30 @@ var createNewTaskElement=function(taskString){
     var editInput=document.createElement("input");//text
     //button.edit
     var editButton=document.createElement("button");//edit button
+    editButton.classList.add("button-base");
 
     //button.delete
     var deleteButton=document.createElement("button");//delete button
+    deleteButton.classList.add("button-base");
     var deleteButtonImg=document.createElement("img");//delete button image
+    deleteButtonImg.classList.add("delete__icon");
 
     label.innerText=taskString;
-    label.className='task';
+    label.classList.add("label-base");
+    label.classList.add("task");
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.classList.add("input-base");
+
     editInput.type="text";
-    editInput.className="task";
+    editInput.classList.add("input-base");
+    editInput.classList.add("task");
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.classList.add("edit");
 
-    deleteButton.className="delete";
+    deleteButton.classList.add("delete");
     deleteButtonImg.src='./remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
@@ -158,8 +166,8 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button.edit");
-    var deleteButton=taskListItem.querySelector("button.delete");
+    var editButton=taskListItem.querySelector(".button-base.edit");
+    var deleteButton=taskListItem.querySelector(".button-base.delete");
 
 
     //Bind editTask to edit button.
